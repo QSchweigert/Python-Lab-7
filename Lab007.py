@@ -90,8 +90,23 @@ def decrypt_vigenere(key: str, ciphertext: str, alphabet: str):
     return ''.join(plain_text)
 
 #print(vigenere_index("D", "T", alphabet))
-et = encrypt_vigenere(key, plaintext, alphabet)
+#et = encrypt_vigenere(key, plaintext, alphabet)
 # vgyHqbnndUomtHn Hkqe
-pt = decrypt_vigenere(key, et, alphabet)
-print(et, pt)
-
+#pt = decrypt_vigenere(key, et, alphabet)
+#print(et, pt)
+choice = 0
+et_lst = []
+while choice != 4:
+    choice = int(input("Enter Your Choice [1] [2] [3] [4]:"))
+    if not (1 <= choice <=3):
+        continue
+    if choice == 1:
+        message = input("What is your message: ")
+        et_lst.append(encrypt_vigenere(key, message, alphabet))
+    elif choice == 2:
+       for ct in et_lst:
+           print(decrypt_vigenere(key, ct, alphabet))
+    elif choice == 3:
+                for ct in et_lst:
+                    print(ct)
+    print("performing")
