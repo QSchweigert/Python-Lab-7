@@ -102,11 +102,15 @@ while choice != 4:
         continue
     if choice == 1:
         message = input("What is your message: ")
+        print("PERFORMING ENCRYPTION")
         et_lst.append(encrypt_vigenere(key, message, alphabet))
+        print(encrypt_vigenere(key, message, alphabet))
     elif choice == 2:
-       for ct in et_lst:
+        dt = input("Enter Encrypted Key: ")
+        print("PERFORMING DECRYPTION")
+        for ct in et_lst:
            print(decrypt_vigenere(key, ct, alphabet))
     elif choice == 3:
-                for ct in et_lst:
-                    print(ct)
-    print("performing")
+        print("DUMPING ENCRYPTION")
+        for ct in et_lst:
+            print(ct)
